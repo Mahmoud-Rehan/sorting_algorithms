@@ -1,2 +1,2 @@
 # sorting_algorithms
-Sorting Algorithms Project 
+Sorting Algorithms Project
