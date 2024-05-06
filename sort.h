@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stddef.h>
-
+#include <stdint.h>
 
 /**
  * struct listint_s - Doubly linked list node
@@ -47,7 +47,10 @@ void quick_sort_hoare(int *array, size_t size);
 void separate_array(int *buffer, int start, size_t size, int *array);
 void merge(int *array, int size, int start, int middle, int *buffer);
 void print_subarray(int *array, int size, int start, int middle);
-
+size_t get_parent(size_t i);
+size_t get_right(size_t i);
+size_t get_left(size_t i);
+void shift(int *array, size_t size, size_t index, size_t n);
 
 
 #endif
