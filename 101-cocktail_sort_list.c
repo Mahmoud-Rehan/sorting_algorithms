@@ -1,13 +1,11 @@
 #include "sort.h"
 
 
-
 /**
  * cocktail_sort_list - Sorts a doubly linked list
  * using COCKTAIL SHAKER SORT.
  * @list: The doubly linked list to be sorted.
  */
-
 
 void cocktail_sort_list(listint_t **list)
 {
@@ -15,7 +13,14 @@ void cocktail_sort_list(listint_t **list)
 	listint_t *start = NULL;
 	listint_t *end = NULL;
 
-	if (!list || !(*list) || !(*list)->next)
+	/*if (!list || !(*list) || !(*list)->next)
+		return;*/
+
+	if (!list)
+		return;
+	if (!(*list))
+		return;
+	if (!(*list)->next)
 		return;
 
 	do {
@@ -48,14 +53,12 @@ void cocktail_sort_list(listint_t **list)
 }
 
 
-
 /**
  * swap_nodes - Swaps two nodes.
  * @current_node: Pointer to the current node.
  * @old_node: Pointer to the old node.
  * @mylist: The doubly linked list.
  */
-
 
 void swap_nodes(listint_t *current_node,
 		listint_t *old_node, listint_t **mylist)
