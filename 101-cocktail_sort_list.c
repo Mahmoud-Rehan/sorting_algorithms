@@ -13,14 +13,7 @@ void cocktail_sort_list(listint_t **list)
 	listint_t *start = NULL;
 	listint_t *end = NULL;
 
-	/*if (!list || !(*list) || !(*list)->next)
-		return;*/
-
-	if (!list)
-		return;
-	if (!(*list))
-		return;
-	if (!(*list)->next)
+	if (!list || !(*list) || !(*list)->next)
 		return;
 
 	do {
