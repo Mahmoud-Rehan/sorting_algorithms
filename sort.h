@@ -14,6 +14,7 @@
  * @prev: Pointer to the previous element of the list
  * @next: Pointer to the next element of the list
  */
+
 typedef struct listint_s
 {
 	const int n;
@@ -36,6 +37,16 @@ void cocktail_sort_list(listint_t **list);
 void swap_nodes(listint_t *current_node, listint_t *old_node, listint_t **mylist);
 void counting_sort(int *array, size_t size);
 int get_max(int *my_array, size_t size);
+void merge_sort(int *array, size_t size);
+void heap_sort(int *array, size_t size);
+void radix_sort(int *array, size_t size);
+void bitonic_sort(int *array, size_t size);
+void quick_sort_hoare(int *array, size_t size);
+/*void sort_deck(deck_node_t **deck);*/
+void separate_array(int *buffer, int start, size_t size, int *array);
+void merge(int *array, int size, int start, int middle, int *buffer);
+void print_subarray(int *array, int size, int start, int middle);
+
 
 
 #endif
