@@ -61,18 +61,18 @@ void radix_sort(int *array, size_t size)
 
 int get_max(int *my_array, size_t size)
 {
-        int max;
-        size_t n;
+	int max;
+	size_t n;
 
-        max = my_array[0];
+	max = my_array[0];
 
-        for (n = 1; n < size; n++)
-        {
-                if (my_array[n] > max)
-                {
-                        max = my_array[n];
-                }
-        }
+	for (n = 1; n < size; n++)
+	{
+		if (my_array[n] > max)
+		{
+			max = my_array[n];
+		}
+	}
 
-        return (max);
+	return (max);
 }
