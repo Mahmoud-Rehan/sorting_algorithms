@@ -1,7 +1,6 @@
 #include "sort.h"
 
 
-
 /**
  * radix_sort - Sorts an array of integers using RADIX SORT.
  * @array: The array to be sorted.
@@ -50,4 +49,30 @@ void radix_sort(int *array, size_t size)
 		print_array(array, size);
 	}
 	free(new);
+}
+
+
+/**
+ * get_max - Get the max value in an array of integers.
+ * @my_array: The array of integers.
+ * @size: The size of the array.
+ * Return: The max value of the array.
+ */
+
+int get_max(int *my_array, size_t size)
+{
+        int max;
+        size_t n;
+
+        max = my_array[0];
+
+        for (n = 1; n < size; n++)
+        {
+                if (my_array[n] > max)
+                {
+                        max = my_array[n];
+                }
+        }
+
+        return (max);
 }
