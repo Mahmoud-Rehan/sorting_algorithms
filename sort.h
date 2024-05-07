@@ -51,6 +51,9 @@ size_t get_parent(size_t i);
 size_t get_right(size_t i);
 size_t get_left(size_t i);
 void shift(int *array, size_t size, size_t index, size_t n);
+void sort(int *array, int min, int slice, int dir, size_t size);
+void bitonic_merge(int *array, int min, int slice, int dir, size_t size);
+void swap(int *a, int *b);
 
 
 #endif
