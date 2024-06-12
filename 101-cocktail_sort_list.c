@@ -9,12 +9,18 @@
 
 void cocktail_sort_list(listint_t **list)
 {
-	listint_t *my_list = *list;
+	listint_t *my_list;
 	listint_t *start = NULL;
 	listint_t *end = NULL;
 
-	if (!list || !(*list) || !(*list)->next)
+	if (!list)
 		return;
+	if (!(*list))
+		return;
+	if (listlen(*list) < 2)
+		return;
+
+	my_list = *list;
 
 	do {
 		while (my_list->next)
@@ -79,4 +85,23 @@ void swap_nodes(listint_t *current_node,
 		*mylist = current_node;
 	}
 	print_list(*mylist);
+}
+
+
+/**
+ * listlen - Get the length of the list.
+ * @list: The list used.
+ * Return: The length.
+ */
+
+size_t listlen(listint_t *list)
+{
+	size_t length = 0;
+
+	while (list)
+	{
+		length++;
+		list = list->next;
+	}
+	return (length);
 }
