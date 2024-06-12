@@ -56,5 +56,7 @@ void bitonic_merge(int *array, int min, int slice, int dir, size_t size);
 void swap(int *a, int *b);
 void quickly(int *array, int first, int last, size_t size);
 int array_partition(int *array, int start, int end, size_t size);
+size_t listlen(listint_t *list);
+
 
 #endif
