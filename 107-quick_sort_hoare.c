@@ -33,7 +33,11 @@ void quickly(int *array, int first, int last, size_t size)
 	if (first < last)
 	{
 		pivot = array_partition(array, first, last, size);
-		quickly(array, first, pivot, size);
+
+		if (pivot > first)
+		{
+			quickly(array, first, pivot, size);
+		}
 		quickly(array, pivot + 1, last, size);
 	}
 }
@@ -51,30 +55,50 @@ void quickly(int *array, int first, int last, size_t size)
 int array_partition(int *array, int start, int end, size_t size)
 {
 	int pivot = array[end];
-	int f = start - 1;
-	int l = end + 1;
-	int tmp;
+	int f = start;
+	int l = end;
 
 	while (1)
 	{
-		do {
-			f++;
-		} while (array[f] < pivot);
-
-		do {
-			l--;
-		} while (array[l] > pivot);
-
-		if (l < f)
-			return (l);
-
-		if (array[f] > array[l])
+		while (array[f] < pivot)
 		{
-			tmp = array[f];
-			array[f] = array[l];
+			f++;
+		}
 
-			array[l] = tmp;
+		while (array[l] > pivot)
+		{
+			l--;
+		}
+
+		if (f < l)
+		{
+			swap(&array[f], &array[l]);
 			print_array(array, size);
+			f++;
+			l--;
+		}
+		else
+		{
+			if (f != l)
+			{
+				return (l);
+			}
+			return (l - 1);
 		}
 	}
+}
+
+/**
+* swap - Swaps indexes of the array.
+* @a: left or low index to swap.
+* @b: right or high index
+*/
+
+void swap(int *a, int *b)
+{
+	int tmp;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
 }
